@@ -27,13 +27,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar
-      app
-      prominent
-      color="primary"
-      dark
-      src="https://picsum.photos/1920/1080?random"
-    >
+    <v-app-bar app prominent color="primary" dark src="mountains.jpg">
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
@@ -43,7 +37,7 @@
 
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-app-bar-title>Title</v-app-bar-title>
+      <v-app-bar-title>Vuetify Todo</v-app-bar-title>
 
       <v-spacer></v-spacer>
 
@@ -71,7 +65,7 @@ export default {
   data: () => ({
     drawer: null,
     items: [
-      { title: 'Dashboard', icon: 'mdi-format-list-checks', to: '/' },
+      { title: 'Todo', icon: 'mdi-format-list-checks', to: '/' },
       { title: 'About', icon: 'mdi-help-box', to: '/about' }
     ]
   })
