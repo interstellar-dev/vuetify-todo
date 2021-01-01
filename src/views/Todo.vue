@@ -7,22 +7,7 @@
       v-if="$store.state.tasks.length"
     />
 
-		<div
-		  v-else
-			class="no-tasks"
-		>
-			<v-icon
-			  color="primary"
-			  size="100"
-			>
-				mdi-check
-			</v-icon>
-			<div
-			  class="text-h5 primary--text"
-			>
-				No tasks
-			</div>
-		</div>
+		<no-tasks v-else/>
 
   </div>
 </template>
@@ -30,13 +15,15 @@
 <script>
 import FieldAddTask from '@/components/Todo/FieldAddTask.vue'
 import ListTasks from '@/components/Todo/ListTasks.vue'
+import NoTasks from '@/components/Todo/NoTasks.vue'
 
 export default {
   name: 'Todo',
 
 	components: {
 		FieldAddTask,
-		ListTasks
+		ListTasks,
+		NoTasks
 	}
 }
 </script>
