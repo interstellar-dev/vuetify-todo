@@ -19,6 +19,9 @@
 				v-for="(item, i) in items"
 				:key="i"
 			>
+				<v-list-item-icon>
+					<v-icon v-text="item.icon"></v-icon>
+				</v-list-item-icon>
 				<v-list-item-title>{{ item.title }}</v-list-item-title>
 			</v-list-item>
 		</v-list>
@@ -29,10 +32,18 @@
 export default {
 	data: () => ({
 		items: [
-			{ title: 'Click Me' },
-			{ title: 'Click Me' },
-			{ title: 'Click Me' },
-			{ title: 'Click Me 2' },
+			{ 
+				title: 'Edit',
+				icon: 'mdi-pencil'
+			},
+			{ 
+				title: 'Due date',
+				icon: 'mdi-calendar'
+			},
+			{ 
+				title: 'delete',
+				icon: 'mdi-delete'
+			},
 		],
 	}),
 }
