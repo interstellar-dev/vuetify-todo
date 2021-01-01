@@ -23,7 +23,7 @@
 			  :key="task.id"
 			>
 				<v-list-item
-				  @click="doneTask(task.id)"
+				  @click="$store.commit('doneTask', task.id)"
 					:class="{'blue lighten-5' : task.done}"
 				>
 					<template v-slot:default>
@@ -90,10 +90,9 @@ export default {
 			this.newTaskTitle = ''
 		},		
 
-		doneTask(id) {
-			let task = this.tasks.filter(task => task.id === id)[0]
-			task.done = !task.done
-		},
+		// doneTask {
+			
+		// },
 
 		deleteTask(id){
 			return this.tasks = this.tasks.filter(task => task.id !== id)
