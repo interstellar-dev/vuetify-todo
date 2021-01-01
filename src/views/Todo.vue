@@ -1,17 +1,7 @@
 <template>
   <div class="home">
 
-		<v-text-field
-			v-model="newTaskTitle"
-			@click:append="addTask"
-			@keyup.enter="addTask"
-			class="pa-2"
-			outlined
-			label="Append"
-			append-icon="mdi-plus"
-			hide-details
-			clearable
-		></v-text-field>
+		<field-add-task></field-add-task>
 
     <v-list
 			v-if="$store.state.tasks.length"
@@ -76,20 +66,14 @@
 </template>
 
 <script>
+import FieldAddTask from '@/components/Todo/FieldAddTask.vue'
+
 export default {
   name: 'Todo',
-  data() {
-    return {
-			newTaskTitle: '',
-    }
-	},
-	
-	methods: {
-		addTask() {
-			this.$store.commit('addTask', this.newTaskTitle);
-			this.newTaskTitle = ''
-		}
-	},
+
+	components: {
+		FieldAddTask
+	}
 }
 </script>
 
