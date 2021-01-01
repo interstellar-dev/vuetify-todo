@@ -33,6 +33,7 @@
 
 		<dialog-delete
 		  v-if="dialogs.delete"
+			@close="dialogs.delete = false"
 		  :task="task"
 		/>
 	</div>

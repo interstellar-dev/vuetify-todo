@@ -12,8 +12,8 @@
 			<v-card-actions>
 				<v-spacer></v-spacer>
 				<v-btn
+					@click="$emit('close')"
 					text
-					@click="dialog = false"
 				>
 					No
 				</v-btn>
