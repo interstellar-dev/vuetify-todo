@@ -2,7 +2,7 @@
 	<v-snackbar
 		v-model="$store.state.snackbar.show"
 	>
-		{{ text }}
+		{{ $store.state.snackbar.text }}
 
 		<template v-slot:action="{ attrs }">
 			<v-btn
@@ -20,8 +20,6 @@
 
 <script>
   export default {
-    data: () => ({
-      text: `Task Added!`,
-    }),
+   
   }
 </script>
