@@ -7,7 +7,9 @@
       v-if="$store.state.tasks.length"
     />
 
-		<no-tasks v-else/>
+		<no-tasks
+		  v-else
+		/>
 
   </div>
 </template>
@@ -28,11 +30,4 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-.no-tasks
-	position: absolute
-	left: 50%
-	top: 50%
-	transform: translate(-50%, -50%)
-	opacity: .5
-</style>
+
