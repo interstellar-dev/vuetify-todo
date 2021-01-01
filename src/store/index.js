@@ -27,7 +27,8 @@ export default new Vuex.Store({
 			show: false,
 			text: ''
 		}
-  },
+	},
+	
   mutations: {
 		addTask(state, newTaskTitle){
 			let newTask = {
@@ -55,11 +56,16 @@ export default new Vuex.Store({
 				timeout = 300
 			}
 			setTimeout(() => {
-				state.snackbar.show = false
+				state.snackbar.show = true
 				state.snackbar.text = text
 			}, timeout);
+		},
+
+		hideSnackbar(state) {
+			state.snackbar.show = false
 		}
-  },
+	},
+	
   actions: {
 		addTask({ commit }, newTaskTitle) {
 			commit('addTask', newTaskTitle)
