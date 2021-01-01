@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .no-tasks
 	position: absolute
 	left: 50%

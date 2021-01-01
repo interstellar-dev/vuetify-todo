@@ -21,7 +21,11 @@ export default new Vuex.Store({
 				title: 'Eat salad',
 				done: false
 			}
-		]
+		],
+
+		snackbar: {
+			show: false
+		}
   },
   mutations: {
 		addTask(state, newTaskTitle){
