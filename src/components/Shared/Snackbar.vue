@@ -21,7 +21,7 @@
 <script>
   export default {
     data: () => ({
-      text: `I'm a snackbar.`,
+      text: `Task Added!`,
     }),
   }
 </script>
