@@ -1,6 +1,6 @@
 <template>
   <div class="about pa-7">
-    <h1>About Vuetify Todo</h1>
+    <h1>About {{ $store.state.appTitle }}</h1>
     <p>
       Далеко-далеко за словесными, горами в стране гласных и согласных живут
       рыбные тексты. Грамматики строчка родного несколько lorem большого букв,
