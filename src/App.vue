@@ -1,16 +1,31 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" app>
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="title">
-            Vuetify Todo
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            Best todo
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
+    <v-navigation-drawer
+      v-model="drawer"
+			:mobile-breakpoint="768"
+      app
+    >
+			<v-img
+				class="pa-3 pt-7"
+				src="mountains.jpg"
+				height="170"
+				gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+			>
+
+				<v-avatar size="70" class="mb-2">
+					<img
+						src="my-avatar.png"
+						alt="John"
+					>
+				</v-avatar>
+				<div class="white--text text-subtitle-1 font-weight-bold">
+					Leonid Konchulizov
+				</div>
+				<div class="white--text text-subtitle-2">
+					leonid.konchulizov
+				</div>
+			
+			</v-img>
 
       <v-divider></v-divider>
 
@@ -33,7 +48,7 @@
       app
       dark
       prominent
-			
+			height="170"
     >
       <template v-slot:img="{ props }">
         <v-img
@@ -42,7 +57,7 @@
         ></v-img>
       </template>
 
-			<v-container class="pa-0">
+			<v-container class="header-container pa-0">
 				<v-row class="pt-1">
 					<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 					<v-spacer></v-spacer>
@@ -75,8 +90,8 @@ import Search from '@/components/Tools/Search.vue'
 import LiveDateTime from '@/components/Tools/LiveDateTime.vue'
 
 export default {
-  data: () => ({
-    drawer: null,
+	data: () => ({
+		drawer: null,
     items: [
       { title: 'Todo', icon: 'mdi-format-list-checks', to: '/' },
       { title: 'About', icon: 'mdi-help-box', to: '/about' }
@@ -91,3 +106,8 @@ export default {
 
 }
 </script>
+
+<style lang="sass">
+.header-container
+	max-width: none !important
+</style>

@@ -22,7 +22,6 @@ export default {
 
 	mounted () {
 		this.getDate();
-		
 	},
 }
 </script>
