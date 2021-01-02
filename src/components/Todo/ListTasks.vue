@@ -5,7 +5,7 @@
 	>
 
 		<task
-		  v-for="task in $store.state.tasks"
+		  v-for="task in $store.getters.tasksFiltered"
 		  :key="task.id"
 			:task="task"
 		/>		
@@ -15,6 +15,7 @@
 
 <script>
 import Task from '@/components/Todo/Task.vue'
+
 export default {
 	components: { 
 		Task

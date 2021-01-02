@@ -1,5 +1,6 @@
 <template>
 	<div>
+
 		<v-list-item
 			@click="$store.commit('doneTask', task.id)"
 			:class="{'blue lighten-5' : task.done}"
@@ -17,41 +18,42 @@
 					</v-list-item-title>
 				</v-list-item-content>
 
+				<v-list-item-action v-if="task.dueDate">
+					<v-list-item-action-text>
+						<v-icon small>mdi-calendar</v-icon>
+						{{ task.dueDate | niceDate }}
+					</v-list-item-action-text>
+				</v-list-item-action>
+
 				<v-list-item-action>
-					<task-menu />
+					<task-menu :task="task" />
 				</v-list-item-action>
 			</template>
-			
-
 		</v-list-item>
+
 		<v-divider></v-divider>
 
-		<dialog-delete
-		  v-if="dialogs.delete"
-			@close="dialogs.delete = false"
-		  :task="task"
-		/>
 	</div>
 </template>
 
 <script>
-import DialogDelete from '@/components/Todo/Dialogs/DialogDelete.vue'
+import { format } from 'date-fns'
+
+
 import TaskMenu from '@/components/Todo/TaskMenu.vue'
+
 
 export default {
 	props: ['task'],
 
-	data() {
-		return {
-			dialogs: {
-				delete: false
-			}
+	filters: {
+		niceDate(value) {
+			return format(new Date(value), 'MMM d')
 		}
 	},
 
 	components: {
-		DialogDelete,
-		TaskMenu
+		TaskMenu,
 	}
 }
 </script>
