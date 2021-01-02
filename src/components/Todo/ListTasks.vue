@@ -30,13 +30,13 @@ export default {
 
 	computed: {
 		tasks: {
-			get() {
-				return this.$store.state.tasks
-			},
-			set(value) {
-				this.$store.dispatch('setTasks', value)
-			}
-		}
+      get() {
+        return this.$store.getters.tasksFiltered
+      },
+      set(value) {
+        this.$store.dispatch('setTasks', value)
+      }
+    }
 	}
 }
 </script>

@@ -13,25 +13,25 @@ export default new Vuex.Store({
 		search: null,
 
 		tasks: [
-			// {
-			// 	id: 1,
-			// 	title: 'Celebrate New Year',
-			// 	done: false,
-			// 	dueDate: '2020-10-16'
-			// },
-			// {
-			// 	id: 2,
-			// 	title: 'Congratulate the family',
-			// 	done: false,
-			// 	dueDate: '2020-10-17'
-			// },
-			// {
-			// 	id: 3,
-			// 	title: 'Eat salad',
-			// 	done: false,
-			// 	dueDate: null
-			// }
-		],
+      // {
+      //   id: 1,
+      //   title: 'Wake up',
+      //   done: false,
+      //   dueDate: '2020-10-16'
+      // },
+      // {
+      //   id: 2,
+      //   title: 'Get bananas',
+      //   done: false,
+      //   dueDate: '2020-10-17'
+      // },
+      // {
+      //   id: 3,
+      //   title: 'Eat bananas',
+      //   done: false,
+      //   dueDate: null
+      // }
+    ],
 
 		snackbar: {
 			show: false,
@@ -142,12 +142,12 @@ export default new Vuex.Store({
   },
   getters: {
 		tasksFiltered(state) {
-			if (!state.search) {
-				return state.tasks
-			}
-			return state.tasks.filter(task => 
-				task.title.toLowerCase().includes(state.search.toLowerCase())
-			)
-		}
+      if (!state.search) {
+        return state.tasks
+      }
+      return state.tasks.filter(task =>
+        task.title.toLowerCase().includes(state.search.toLowerCase())
+      )
+    }
   }
 })

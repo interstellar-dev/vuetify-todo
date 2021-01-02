@@ -8,7 +8,7 @@
 			<v-img
 				class="pa-3 pt-7"
 				src="mountains.jpg"
-				height="170"
+				:height="heightAppHeader"
 				gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
 			>
 
@@ -48,17 +48,17 @@
       app
       dark
       prominent
-			height="170"
+			:height="heightAppHeader"
     >
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
-          gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+          gradient="to top right, rgba(19,84,122,.8), rgba(128,208,199,.8)"
         ></v-img>
       </template>
 
 			<v-container class="header-container pa-0">
-				<v-row class="pt-1">
+				<v-row class="pt-3">
 					<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 					<v-spacer></v-spacer>
 					<search />
@@ -73,7 +73,12 @@
 				<v-row>
 					<live-date-time />
 				</v-row>
+
+				<v-row v-if="$route.path === '/'">
+					<field-add-task />
+				</v-row>
 			</v-container>
+
 
     </v-app-bar>
 
@@ -88,6 +93,7 @@
 import Snackbar from '@/components/Shared/Snackbar.vue'
 import Search from '@/components/Tools/Search.vue'
 import LiveDateTime from '@/components/Tools/LiveDateTime.vue'
+import FieldAddTask from '@/components/Todo/FieldAddTask.vue'
 
 export default {
 	data: () => ({
@@ -98,11 +104,18 @@ export default {
     ]
 	}),
 
+	computed: {
+		heightAppHeader() {
+			return this.$route.path === '/' ? '200' : '160'
+		}
+	},
+
 	mounted () {
-		this.$store.dispatch('getTasks');
+		this.$store.dispatch('getTasks')
 	},
 	
 	components: {
+		FieldAddTask,
 		Snackbar,
 		Search,
 		LiveDateTime
