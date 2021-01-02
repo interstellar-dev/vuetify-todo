@@ -13,12 +13,12 @@ export default new Vuex.Store({
 		search: null,
 
 		tasks: [
-      // {
-      //   id: 1,
-      //   title: 'Wake up',
-      //   done: false,
-      //   dueDate: '2020-10-16'
-      // },
+      {
+        id: 1,
+        title: 'Въебать чувашам по яйцам',
+        done: false,
+        dueDate: '2021-01-2'
+      },
       // {
       //   id: 2,
       //   title: 'Get bananas',
