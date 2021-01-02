@@ -34,7 +34,7 @@ export default {
 				return this.$store.state.tasks
 			},
 			set(value) {
-				this.$store.commit('setTasks', value)
+				this.$store.dispatch('setTasks', value)
 			}
 		}
 	}
